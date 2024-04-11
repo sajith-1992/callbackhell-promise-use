@@ -1,4 +1,4 @@
-function add(num1,num2,callback){
+/* function add(num1,num2,callback){
 var err=false
 if (num1===0){
     err=true
@@ -26,10 +26,22 @@ add(10,20,(sum,err)=>{if(err){
             
         })})
     }
-})
+}) */
 const promise=require('promise')
+const{resolve,reject}=require('promise')
 function add(num1,num2){
+    return new Promise((resolve, reject) => {
+        resolve(num1+num2)
+        
+        
+    })}
+function multiply(num1,num2){
+    return new promise((resolve,reject)=>
+    resolve(num1*num2))
+    
+}
+
+add(10,20).then((sum)=>{console.log(sum)
+multiply(sum,sum).then((multiply)=>console.log(multiply))})
     
 
-
-}
