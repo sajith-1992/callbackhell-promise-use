@@ -31,17 +31,18 @@ const promise=require('promise')
 const{resolve,reject}=require('promise')
 function add(num1,num2){
     return new Promise((resolve, reject) => {
+       if(num1==0){
+        reject("num1 is zero")
+       }
         resolve(num1+num2)
         
         
     })}
-function multiply(num1,num2){
-    return new promise((resolve,reject)=>
-    resolve(num1*num2))
+add(0,10).then((sum)=>{
+    console.log(sum)
+}).catch((err)=>{
+    console.log(err)
+})
     
-}
 
-add(10,20).then((sum)=>{console.log(sum)
-multiply(sum,sum).then((multiply)=>console.log(multiply))})
-    
 
