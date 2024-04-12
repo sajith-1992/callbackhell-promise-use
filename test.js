@@ -34,13 +34,29 @@ function add(num1,num2){
        if(num1==0){
         reject("num1 is zero")
        }
-        resolve(num1+num2)
+        resolve(num1+num2)   })}
+function multiply(num1,num2){
+    return new promise((resolve,reject)=>{
+        resolve(num1*num2)
+    })
+}   
+function div(num1,num2){
+    return new promise((resolve,reject)=>{
+        resolve(num1/num2)
+    })
+}         
         
-        
-    })}
-add(0,10).then((sum)=>{
+
+add(10,10).then((sum)=>{
     console.log(sum)
-}).catch((err)=>{
+     return multiply(sum,sum)
+       
+}).then((product)=>{console.log(product)
+return div(product,10)}).then((div)=>{console.log(div)})
+
+.catch((err)=>{
+    
+
     console.log(err)
 })
     
