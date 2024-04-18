@@ -3,8 +3,7 @@ const { resolve, reject } = require("promise");
 function one(){
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
-            resolve("sajith")},10000
-        )
+            resolve("sajith")},1000        )
     })
 }
 function two(){
@@ -16,5 +15,6 @@ function two(){
     })
 }
 
-one().then((result)=>{console.log(result)
-return two()}).then((result)=>{console.log(result)})
+Promise.all([one(),two()]).then((result)=>{
+    console.log(result)
+})
