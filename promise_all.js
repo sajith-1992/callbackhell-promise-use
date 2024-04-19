@@ -15,6 +15,8 @@ function two(){
     })
 }
 
-Promise.all([one(),two()]).then((result)=>{
-    console.log(result)
-})
+async function three(){
+    let name = await one()
+    console.log(name)
+}
+three()
